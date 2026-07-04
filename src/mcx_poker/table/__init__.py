@@ -1,0 +1,2 @@
+"""Table and seat management."""
+
