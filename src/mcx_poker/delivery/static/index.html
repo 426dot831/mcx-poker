@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MCX Poker Table</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body
+    data-api-base="/api"
+    data-ws-path="/ws/table"
+    data-seat-count="6"
+    data-player-id="hero"
+    data-player-seat-index="0"
+  >
+    <!--
+      FE-01/FE-25 integration note:
+      This is a framework-free static frontend packaged as mcx_poker delivery data.
+      A local Python backend should serve these files, expose GET /api/table,
+      POST /api/table/control, and WebSocket /ws/table. The project script is
+      mcx-poker = mcx_poker.delivery.api:main when that backend entry exists.
+    -->
+    <main class="table-shell" data-app>
+      <section class="status-strip" aria-label="Table status">
+        <div class="status-item">
+          <span>Connection</span>
+          <strong id="connectionStatus" data-connection-status>disconnected</strong>
+        </div>
+        <div class="status-item">
+          <span>Hand</span>
+          <strong id="handStatus" data-hand-id>-</strong>
+        </div>
+        <div class="status-item">
+          <span>Actor</span>
+          <strong id="actorStatus" data-current-actor>-</strong>
+        </div>
+        <div class="status-error" id="lastError" data-last-error role="status" aria-live="polite"></div>
+      </section>
+
+      <section class="table-scene" aria-label="Poker table">
+        <div class="table-felt" aria-label="Table surface">
+          <div class="board-zone">
+            <span class="zone-label">Board</span>
+            <div class="card-row board-cards" id="boardCards" data-board-cards aria-label="Community cards">
+              <span class="card slot" data-board-index="0">--</span>
+              <span class="card slot" data-board-index="1">--</span>
+              <span class="card slot" data-board-index="2">--</span>
+              <span class="card slot" data-board-index="3">--</span>
+              <span class="card slot" data-board-index="4">--</span>
+            </div>
+          </div>
+          <div class="pot-zone" id="potSummary" data-pot-summary>
+            <span class="zone-label">Total Pot</span>
+            <strong data-pot-total>-</strong>
+            <small data-pot-breakdown></small>
+          </div>
+          <div class="showdown-zone" id="showdownSummary" data-showdown-summary hidden></div>
+        </div>
+
+        <div class="seat-ring" id="seatRing" data-seat-ring>
+          <article class="seat seat-0" data-seat-index="0" aria-label="Seat 1">
+            <div class="seat-topline">
+              <span class="seat-position">Seat 1</span>
+              <span class="seat-state" data-seat-state>Open</span>
+            </div>
+            <strong class="seat-name" data-seat-name>Empty</strong>
+            <span class="seat-stack" data-seat-stack>-</span>
+            <div class="card-row seat-cards" data-seat-cards aria-label="Seat cards">
+              <span class="card back" aria-label="Hidden card">BACK</span>
+              <span class="card back" aria-label="Hidden card">BACK</span>
+            </div>
+          </article>
+
+          <article class="seat seat-1" data-seat-index="1" aria-label="Seat 2">
+            <div class="seat-topline">
+              <span class="seat-position">Seat 2</span>
+              <span class="seat-state" data-seat-state>Open</span>
+            </div>
+            <strong class="seat-name" data-seat-name>Empty</strong>
+            <span class="seat-stack" data-seat-stack>-</span>
+            <div class="card-row seat-cards" data-seat-cards aria-label="Seat cards">
+              <span class="card back" aria-label="Hidden card">BACK</span>
+              <span class="card back" aria-label="Hidden card">BACK</span>
+            </div>
+          </article>
+
+          <article class="seat seat-2" data-seat-index="2" aria-label="Seat 3">
+            <div class="seat-topline">
+              <span class="seat-position">Seat 3</span>
+              <span class="seat-state" data-seat-state>Open</span>
+            </div>
+            <strong class="seat-name" data-seat-name>Empty</strong>
+            <span class="seat-stack" data-seat-stack>-</span>
+            <div class="card-row seat-cards" data-seat-cards aria-label="Seat cards">
+              <span class="card back" aria-label="Hidden card">BACK</span>
+              <span class="card back" aria-label="Hidden card">BACK</span>
+            </div>
+          </article>
+
+          <article class="seat seat-3" data-seat-index="3" aria-label="Seat 4">
+            <div class="seat-topline">
+              <span class="seat-position">Seat 4</span>
+              <span class="seat-state" data-seat-state>Open</span>
+            </div>
+            <strong class="seat-name" data-seat-name>Empty</strong>
+            <span class="seat-stack" data-seat-stack>-</span>
+            <div class="card-row seat-cards" data-seat-cards aria-label="Seat cards">
+              <span class="card back" aria-label="Hidden card">BACK</span>
+              <span class="card back" aria-label="Hidden card">BACK</span>
+            </div>
+          </article>
+
+          <article class="seat seat-4" data-seat-index="4" aria-label="Seat 5">
+            <div class="seat-topline">
+              <span class="seat-position">Seat 5</span>
+              <span class="seat-state" data-seat-state>Open</span>
+            </div>
+            <strong class="seat-name" data-seat-name>Empty</strong>
+            <span class="seat-stack" data-seat-stack>-</span>
+            <div class="card-row seat-cards" data-seat-cards aria-label="Seat cards">
+              <span class="card back" aria-label="Hidden card">BACK</span>
+              <span class="card back" aria-label="Hidden card">BACK</span>
+            </div>
+          </article>
+
+          <article class="seat seat-5" data-seat-index="5" aria-label="Seat 6">
+            <div class="seat-topline">
+              <span class="seat-position">Seat 6</span>
+              <span class="seat-state" data-seat-state>Open</span>
+            </div>
+            <strong class="seat-name" data-seat-name>Empty</strong>
+            <span class="seat-stack" data-seat-stack>-</span>
+            <div class="card-row seat-cards" data-seat-cards aria-label="Seat cards">
+              <span class="card back" aria-label="Hidden card">BACK</span>
+              <span class="card back" aria-label="Hidden card">BACK</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="play-rail" aria-label="Player controls">
+        <div class="player-hand" aria-label="Current player hand">
+          <span class="panel-label">Your Hand</span>
+          <div class="card-row hero-cards" id="heroCards" data-hero-cards>
+            <span class="card slot">--</span>
+            <span class="card slot">--</span>
+          </div>
+        </div>
+
+        <form class="action-bar" id="actionForm" data-action-bar aria-label="Action bar">
+          <button type="submit" class="action-button" data-action="Fold" disabled>Fold</button>
+          <button type="submit" class="action-button" data-action="Check" disabled>Check</button>
+          <button type="submit" class="action-button" data-action="Call" disabled>Call</button>
+          <label class="raise-control" for="raiseToAmount">
+            <span>RaiseTo</span>
+            <input
+              id="raiseToAmount"
+              name="raise_to_amount"
+              data-raise-to-amount
+              type="number"
+              inputmode="numeric"
+              min="0"
+              step="1"
+              placeholder="Total"
+              autocomplete="off"
+              disabled
+            >
+          </label>
+          <button type="submit" class="action-button" data-action="RaiseTo" disabled>RaiseTo</button>
+          <button type="submit" class="action-button danger" data-action="AllIn" disabled>AllIn</button>
+        </form>
+
+        <div class="table-controls" data-table-controls aria-label="Table controls">
+          <span class="panel-label">Table Controls</span>
+          <button type="button" data-command="start">Start</button>
+          <button type="button" data-command="pause">Pause</button>
+          <button type="button" data-command="resume">Resume</button>
+          <button type="button" data-command="reset">Reset</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>

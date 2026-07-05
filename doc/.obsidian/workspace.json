@@ -1,0 +1,240 @@
+{
+  "main": {
+    "id": "f4a4d5fbf63188bb",
+    "type": "split",
+    "children": [
+      {
+        "id": "c10e2462feaa6069",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f3f1dce7289e1655",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "人话/人话项目导览.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "人话项目导览"
+            }
+          },
+          {
+            "id": "ae42d18647d29175",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "人话/README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e9bea592bc1950c4",
+    "type": "split",
+    "children": [
+      {
+        "id": "42e04318031b7d42",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b8134584a5dc176b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "ad84f88ede061a10",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "3cf40b5a72788865",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "b31b0548d1b4b7d8",
+    "type": "split",
+    "children": [
+      {
+        "id": "da636eba65d0982e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "52fc8a6456ad6be1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "prompt.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "prompt 的反向链接列表"
+            }
+          },
+          {
+            "id": "e93bc6cb5d358847",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "prompt.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "prompt 的出链列表"
+            }
+          },
+          {
+            "id": "bc5ac85076615470",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "ae3f8f2cf3e3423d",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "b825510c2eca27cf",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "prompt.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "prompt 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "ae42d18647d29175",
+  "lastOpenFiles": [
+    "人话/人话项目导览.md",
+    "人话/人话_actions.py.md",
+    "人话/README.md",
+    "人话/_旧入口/人话_actions.py.md",
+    "人话/_旧入口",
+    "人话/mcx_poker/table/manager.py.md",
+    "人话/mcx_poker/table/__init__.py.md",
+    "人话/mcx_poker/players/controllers.py.md",
+    "人话/mcx_poker/players/__init__.py.md",
+    "人话/mcx_poker/observation/builder.py.md",
+    "人话/mcx_poker/observation/__init__.py.md",
+    "人话/mcx_poker/history/events.py.md",
+    "人话/mcx_poker/history/__init__.py.md",
+    "人话/mcx_poker/extensions/interfaces.py.md",
+    "人话/mcx_poker/extensions/__init__.py.md",
+    "人话/mcx_poker/engine/validator.py.md",
+    "人话/mcx_poker/engine/pokerkit_adapter.py.md",
+    "人话/mcx_poker/engine/game_loop.py.md",
+    "人话/mcx_poker/engine/actions.py.md",
+    "人话/mcx_poker/engine/__init__.py.md",
+    "人话/mcx_poker/delivery/websocket.py.md",
+    "人话/mcx_poker/delivery/local.py.md",
+    "人话/mcx_poker/delivery/api.py.md",
+    "人话/mcx_poker/delivery/__init__.py.md",
+    "人话/mcx_poker/table",
+    "人话/mcx_poker/players",
+    "人话/mcx_poker/observation",
+    "人话/mcx_poker/history",
+    "人话/mcx_poker/extensions",
+    "人话/mcx_poker/engine",
+    "人话/mcx_poker/delivery",
+    "人话/mcx_poker/__init__.py.md",
+    "人话/mcx_poker",
+    "人话",
+    "prompt.md",
+    "implementation-decisions.md"
+  ]
+}
