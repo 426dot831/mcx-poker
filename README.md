@@ -47,3 +47,7 @@ rg "from pokerkit|import pokerkit" src tests
 
 PokerKit imports are intentionally limited to
 `src/mcx_poker/engine/pokerkit_adapter.py` and its adapter tests.
+
+## Authorship
+
+This project was primarily written with OpenAI Codex.
